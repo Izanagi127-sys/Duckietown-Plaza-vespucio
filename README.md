@@ -213,5 +213,6 @@ STOP_LINE_MASK = [(0, 128, 161), (10, 225, 225)]
 dt-gui-tools# rqt_image_view
 ts devel build -H miguelito -f --no-cache
 
-
+Ideas para el futuro
+buscar como habilitar los nucleos cuda de la jetson nano para reducir carga de la cpu y mejorar rendimiento general utilizando opencv con cuda
 
