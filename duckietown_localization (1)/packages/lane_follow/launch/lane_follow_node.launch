@@ -1,0 +1,7 @@
+<launch>
+  <arg name="veh" default="elonquack"/>
+  <rosparam file="$(find lane_follow)/config/default.yaml" command="load"/>
+  <group ns="$(arg veh)">
+    <node pkg="lane_follow" type="lane_follow.py" name="lane_follow_node" output="screen"/>
+  </group>
+</launch>

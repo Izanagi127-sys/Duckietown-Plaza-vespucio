@@ -1,0 +1,6 @@
+<launch>
+  <!-- Cargar parámetros desde default.yaml -->
+  <rosparam file="$(find apriltag)/config/apriltag_node/default.yaml" command="load" />
+  <!-- Ejecutar el nodo de AprilTags -->
+  <node pkg="apriltag" type="apriltag_node.py" name="apriltag_node" output="screen"/>
+</launch>

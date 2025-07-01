@@ -1,0 +1,17 @@
+<package format="2">
+  <name>vision_superior_node</name>
+  <version>0.0.1</version>
+  <description>Visión superior del Duckiebot: detección de QR y AprilTags</description>
+  <maintainer email="tucorreo@ejemplo.com">Duckie Dev</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>duckietown_msgs</depend>
+  <depend>message_runtime</depend>
+
+  <!-- pyzbar es una librería externa, no va aquí -->
+</package>

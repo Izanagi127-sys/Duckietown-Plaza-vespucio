@@ -1,0 +1,6 @@
+# LIST YOUR PYTHON3 PACKAGES HERE
+dt-apriltags
+numpy
+opencv-python
+pyzxing
+

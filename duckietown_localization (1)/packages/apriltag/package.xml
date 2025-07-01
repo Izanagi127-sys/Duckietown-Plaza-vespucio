@@ -1,0 +1,19 @@
+<package format="2">
+  <name>apriltag</name>
+
+  <version>0.0.1</version>
+  <description>AprilTag detection node</description>
+  <maintainer email="you@example.com">Duckie Dev</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>duckietown_msgs</depend>
+  <depend>message_runtime</depend>
+  <depend>cv_bridge</depend> <!-- opcional si usas procesamiento con ROS images -->
+  <depend>dt_apriltags</depend> <!-- detector específico de Duckietown -->
+
+</package>

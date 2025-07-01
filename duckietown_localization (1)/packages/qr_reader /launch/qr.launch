@@ -1,0 +1,6 @@
+<launch>
+  <!-- Cambia el valor para activar el desafío correspondiente -->
+  <node pkg="qr_reader" type="qr_reader.py" name="qr_reader_node" output="screen">
+    <param name="desafio_activo" value="2"/>
+  </node>
+</launch>

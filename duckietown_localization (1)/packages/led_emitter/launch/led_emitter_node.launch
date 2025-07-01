@@ -1,0 +1,4 @@
+<launch>
+ <rosparam file="$(find led_emitter)/config/LED_protocol.yaml" command="load"/>
+  <node pkg="led_emitter" type="led_emitter_node.py" name="led_emitter_node" output="screen"/>
+</launch>
