@@ -29,9 +29,11 @@ Este repositorio contiene código ROS para el manejo de distintos módulos de pe
   * `/VEHICLE_NAME/qrreader/compressed`: Publica imágenes procesadas.
   * `/VEHICLE_NAME/led_emitter_node/led_pattern`: Control visual mediante LEDs.
 
-#### 3. **Lane Follow Node** (`lane_follow.py`)
+#### 3. **Lane Follow Node con Odometría** (`lane_follow.py`)
 
-**Función**: Seguimiento automático de carriles usando detección de colores mediante máscaras HSV y control PID.
+**Función**: Seguimiento automático de carriles usando detección de colores mediante máscaras HSV, control PID y odometría para estimar la posición y orientación del Duckiebot.
+
+* **Funcionamiento con Odometría**: El módulo utiliza sensores de rotación en las ruedas (encoders) para calcular la posición relativa del robot. Esta información se combina con la detección visual del carril para corregir y mejorar la precisión del seguimiento.
 
 * **Tópicos ROS**:
 
@@ -67,4 +69,17 @@ Este repositorio contiene código ROS para el manejo de distintos módulos de pe
   * Servicio `/HOSTNAME/led_emitter_node/set_pattern`: Cambia a patrones predefinidos.
 
 
-¡Gracias por contribuir al proyecto Duckietown!
+```
+
+## Estructura de Configuración
+
+Para facilitar el manejo y activación de nodos, se recomienda centralizar su gestión en el script `default.sh`. Ejemplo:
+
+```bash
+# Lanzamiento automático de nodos principales
+roslaunch apriltag apriltag_node.launch veh:="$VEHICLE_NAME" &
+rosrun lane_follow lane_follow.py &
+roslaunch duck_detector duck_detector.launch veh:="$VEHICLE_NAME" &
+```
+
+
