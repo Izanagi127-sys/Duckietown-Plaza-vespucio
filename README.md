@@ -83,3 +83,135 @@ roslaunch duck_detector duck_detector.launch veh:="$VEHICLE_NAME" &
 ```
 
 
+
+comando claves 
+
+dts init_sd_card --hostname miguelito --type duckiebot --configuration db21j --wifi WIFI
+
+// ambiente virtual instalcion duckie shell
+python3 -m venv ~/my_virtual_env
+source ~/my_virtual_env/bin/activate
+pip install --upgrade pip
+pip install duckietown-shell
+
+which dts
+nano ~/.bashrc
+---- agregar al final: export PATH=~/.local/bin:${PATH}
+
+pip install setuptools
+
+
+dts version
+
+dts init_sd_card --hostname duckieMont  --type duckiebot --configuration DB21J --wifi 'Casa Pardo:18642160'
+
+
+https://hub.docker.com/
+
+github:
+git --version
+sudo apt update
+sudo apt install git
+
+ssh-keygen -t ed25519 -C "tu_correo@ejemplo.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+
+https://github.com/settings/keys
+
+si todo esta bien:  ssh -T git@github.com
+daria un msj de bienvenida
+
+finalmente configurar:
+git config --global user.name "tu_nombre_de_usuario"
+git config --global user.email "tu_correo@ejemplo.com"
+
+
+
+
+
+dts fleet discover
+dts duckiebot calibrate_intrinsics [your_duckiebot_hostname]
+/data/config/calibrations/camera_intrinsic/[your_duckiebot_hostname].yaml
+dts duckiebot calibrate_extrinsics [your_duckiebot_hostname]
+/data/config/calibrations/camera_extrinsic/[your_duckiebot_hostname].yaml
+
+
+
+
+
+
+
+
+
+dts duckiebot keyboard_control ![DUCKIEBOT_NAME]
+dts start_gui_tools [hostname]
+
+si va hacia la izquierda se le disminuye el trim, si va hacia la derecha el trim debe aumentar
+
+
+rosparam get /autito/kinematics_node/trim 
+
+
+rosparam set /[hostname]/kinematics_node/trim [trim_value]
+
+
+
+
+finalmente guardar todo esto con:
+rosservice call /[hostname]/kinematics_node/save_calibration
+/data/config/calibrations/kinematics/[hostname].yaml
+
+
+
+
+
+
+
+
+
+
+demos: LF
+dts duckiebot demo --demo_name lane_following --duckiebot_name zombieduck --package_name duckietown_demos
+
+dts code workbench -b nombre-Duckie
+dts code workbench 
+
+
+To build:
+```dts devel build -H ROBOT_NAME -f``` or ```dts devel build -f```
+
+To run:
+``````dts devel run -R ROBOT_NAME```
+ssh duckie@Pato quackquack
+sudo apt update && sudo apt install curl -y
+
+
+sudo apt-key del F42ED6FBAB17C654 && \
+  curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+dts devel build -H eustaquio && dts devel run -H eustaquio
+
+
+
+
+#Corregir errores
+RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
+
+# install apt dependencies
+
+
+   <arg name="veh" doc="Name of vehicle." default="$(env VEHICLE_NAME)"/>
+   <arg name="pkg_name" value="lane_follow"/>
+   <arg name="node_name" default="lane_follow_node"/>
+   <group ns="$(arg veh)">
+
+
+ROAD_MASK = [(20, 45, 25), (35, 255, 255)]
+STOP_LINE_MASK = [(0, 128, 161), (10, 225, 225)]
+
+dt-gui-tools# rqt_image_view
+ts devel build -H miguelito -f --no-cache
+
+
+
